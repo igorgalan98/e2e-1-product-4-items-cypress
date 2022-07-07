@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import EnderecoPage from '../support/page_objects/nome-funcionliada.page'
+
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     /*  Como cliente 
         Quero acessar a Loja EBAC 
@@ -10,12 +12,11 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         E validando minha compra ao final */
 
     beforeEach(() => {
-        cy.visit('/')
+        cy.visit('/produtos/page/9')
     });
 
-    it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
-        //TODO 
+    it('Deve adicionar produtos ao carrinho - Usando comando customizado', () => {
+        cy.addProdutos('Bruno Compete Hoodie', 'XL', 'Blue', 4)
     });
-
 
 })
