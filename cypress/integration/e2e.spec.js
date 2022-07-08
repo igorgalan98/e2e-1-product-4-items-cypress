@@ -10,13 +10,13 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         Adicionando ao carrinho
         Preenchendo todas opções no checkout
         E validando minha compra ao final */
+        
 
-    beforeEach(() => {
+    it('Caminho feliz - Realizar compra e preencher campos obrigatórios', () => {
         cy.visit('/produtos/page/9')
-    });
-
-    it('Deve adicionar produtos ao carrinho - Usando comando customizado', () => {
         cy.addProdutos('Bruno Compete Hoodie', 'XL', 'Blue', 4)
+
+        EnderecoPage.editarEnderecoFaturamento()
     });
 
-})
+    })
